@@ -397,11 +397,32 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Cursor ----- */
+/* --------------------------------------- */
+
+.cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    opacity: 0;
+}
+
+.header:hover .cursor {
+    opacity: 1;
+}
+
+/* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
 
 .header {
-    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)),
         url('./images/hero_image.avif');
     height: 100vh;
     background-size: cover;
@@ -412,6 +433,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .header__text {
     position: absolute;
+    mix-blend-mode: difference;
+    transition: all linear 0.2s;
     top: 50%;
     transform: translateY(-50%);
 }

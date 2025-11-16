@@ -39,3 +39,20 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+
+const cursor = document.querySelector('.cursor');
+const header = document.querySelector('.header');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 10 + 'px'; 
+    cursor.style.top = e.clientY - 10 + 'px';  
+});
+
+header.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+});
+
+header.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+});
